@@ -3,12 +3,12 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
-  PGUSER, PGPASSWORD, PGPORT, PGDATABASE, PGHOST
+  PGUSER, PGPASSWORD, PGPORT, PGDATABASE, PGHOST, PGDATABASE_URL
 } = process.env;
 const activity = require("./models/Activity");   // ! se solicita esto para comenzar
 const country = require("./models/Country");       // !  se solicita esto para comenzar
 
-const sequelize = new Sequelize(`postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}`,  
+const sequelize = new Sequelize( PGDATABASE_URL,  
  {     dialect: "postgres",     logging: false,     native: false,   }
 );
 
