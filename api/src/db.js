@@ -3,7 +3,7 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
-  DB_USER, DB_PASSWORD, DB_HOST,DB_DEPLOY
+  PGUSER, PGPASSWORD, PGPORT, PGDATABASE, PGHOST
 } = process.env;
 const activity = require("./models/Activity");   // ! se solicita esto para comenzar
 const country = require("./models/Country");       // !  se solicita esto para comenzar
