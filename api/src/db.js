@@ -8,10 +8,9 @@ const {
 const activity = require("./models/Activity");   // ! se solicita esto para comenzar
 const country = require("./models/Country");       // !  se solicita esto para comenzar
 
-const sequelize = new Sequelize(DB_DEPLOY, {
-  logging: false, // set to console.log to see the raw SQL queries
-  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-});
+const sequelize = new Sequelize(`postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}:${PGPORT}/${PGDATABASE}`,  
+ {     dialect: "postgres",     logging: false,     native: false,   }
+);
 
 //const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/countries`, {
 //  logging: false, // set to console.log to see the raw SQL queries
