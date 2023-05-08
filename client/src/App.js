@@ -3,7 +3,7 @@ import { Route, useLocation } from "react-router-dom"
 import './App.css';
 import NavBar from "./components/NavBar/NavBar"
 import axios from "axios";
-axios.defaults.baseURL = "deploy-production-110a.up.railway.app/"
+axios.defaults.baseURL = "https://deploy-production-110a.up.railway.app/"
 
 
 
